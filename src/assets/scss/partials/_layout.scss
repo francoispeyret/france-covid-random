@@ -1,0 +1,13 @@
+main,
+footer,
+header {
+    padding: 1.5rem 0;
+}
+
+main {
+    padding-top: 0;
+
+    @media (max-width: 769px) {
+        
+    }
+}

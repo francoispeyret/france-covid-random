@@ -1,0 +1,61 @@
+
+
+#map {
+    display: block;
+    margin: 5vh auto;
+    width: 80vw;
+    max-width: 600px;
+    height: auto;
+    path {
+        stroke: #fff;
+        stroke-width: 1px;
+        fill: #aaa;
+        transition: fill ease 0.1s;
+        &.red {
+            fill: $red;
+        }
+        &.orange {
+            fill: $orange;
+        }
+        &.green {
+            fill: $green;
+        }
+    }
+
+    &.finish-animation {
+        animation: finishAnimation ease-in-out 0.3s;
+        @keyframes finishAnimation {
+            0%,100%{
+                transform: none;
+            }
+            50% {
+                transform: scale(0.85);
+            }
+        }
+    }
+}
+
+button {
+    appearance: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: white;
+    background: $red;
+    border: none;
+    letter-spacing: 0.075em;
+    font-size: 12px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($red, 10%);
+    }
+
+    @media (max-width: 769px) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1.5rem;
+    }
+}
