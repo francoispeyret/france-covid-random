@@ -1,7 +1,27 @@
 
-const areas = document.querySelectorAll('path');
-const map = document.querySelector('#map');
+const areas    = document.querySelectorAll('path');
+const map      = document.querySelector('#map');
+const appEl    = document.querySelector('#app');
+const startEl  = document.querySelector('#start');
+const cancelEl = document.querySelector('#cancel');
+const introEl  = document.querySelector('#bienvenue');
 let animationIteration = 0;
+
+appEl.style.display = 'none';
+
+startEl.addEventListener('click', toggleApp);
+cancelEl.addEventListener('click', toggleApp);
+
+function toggleApp() {
+    if(appEl.style.display === 'none') {
+        appEl.style.display = 'block';
+        introEl.style.display = 'none';
+    } else {
+        appEl.style.display = 'none';
+        introEl.style.display = 'block';
+    }
+}
+
 
 function randomize() {
     areas.forEach((item) => {

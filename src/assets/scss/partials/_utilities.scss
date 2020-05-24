@@ -40,3 +40,43 @@ body {
       outline: 1px solid slategrey;
     }
 }
+
+.button-container {
+    
+    @media (max-width: 769px) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+
+button {
+    display: inline-block;
+    vertical-align: middle;
+    appearance: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: white;
+    background: $red;
+    border: none;
+    letter-spacing: 0.075em;
+    font-size: 12px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($red, 10%);
+    }
+
+    @media (max-width: 769px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    &#cancel {
+        padding: 0.625rem 0.5rem 0.6rem;
+        background-color: #ddd;
+    }
+}

@@ -79,7 +79,7 @@ module.exports = {
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
-            title: 'France Covid Random',
+            title: 'Random Covid France',
             template: './src/index.html',
             inject: true,
             minify: {
