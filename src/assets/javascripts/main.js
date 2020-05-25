@@ -48,6 +48,7 @@ function randomizeRool() {
     animationIteration++;
     if(animationIteration == 29) {
         map.classList.add('finish-animation');
+        //document.querySelector('#motus').play();
     }
     if(animationIteration < 30 && animationIteration!= 0) {
         randomize();

@@ -42,7 +42,10 @@ body {
 }
 
 .button-container {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     @media (max-width: 769px) {
         position: fixed;
         left: 0;
@@ -57,6 +60,7 @@ button {
     display: inline-block;
     vertical-align: middle;
     appearance: none;
+    min-width: 47px;
     padding: 1rem 2rem;
     text-transform: uppercase;
     color: white;
