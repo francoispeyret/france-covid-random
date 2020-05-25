@@ -10,7 +10,7 @@
         stroke: #fff;
         stroke-width: 1px;
         fill: #aaa;
-        transition: fill ease 0.1s;
+        transition: all ease 0.1s;
         &.red {
             fill: $red;
         }
@@ -19,6 +19,34 @@
         }
         &.green {
             fill: $green;
+        }
+        &.licorne1 {
+            fill: #FF595E;
+        }
+        &.licorne2 {
+            fill: #FFCA3A;
+        }
+        &.licorne3 {
+            fill: #8AC926;
+        }
+        &.licorne4 {
+            fill: #1982C4;
+        }
+        &.licorne5 {
+            fill: #6A4C93;
+        }
+        &.dalto1 {
+            fill: #f6cebe;
+        }
+        &.dalto2 {
+            fill: #e78863;
+        }
+        &.dalto3 {
+            fill: #953a15;
+        }
+    
+        &:hover {
+            stroke-width: 2px;
         }
     }
 
@@ -30,6 +58,51 @@
             }
             50% {
                 transform: scale(0.85);
+            }
+        }
+    }
+}
+
+.mode-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    button {
+        background: #eee;
+        border-right: 1px solid #ddd;
+        color: #000;
+        padding: .6rem .75rem .55rem;
+        
+        &:last-child {
+            border-right: 0;
+        }
+        
+        &.active,
+        &:focus,
+        &:hover {
+            background-color: #ddd;
+            outline: none;
+        }
+        
+        svg {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            transition: all ease-in-out .2s;
+        }
+        
+        &[data-mode="licorne"] {
+            svg {
+                fill: #ccc;
+            }
+            
+            &.active,
+            &:focus,
+            &:hover {
+                svg {
+                    fill: #000;
+                }
             }
         }
     }
