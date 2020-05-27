@@ -94,6 +94,10 @@ module.exports = {
             },
         }),
         new CopyWebpackPlugin([{
+            from: './src/assets/images',
+            to: 'assets/images'
+        }]),
+        new CopyWebpackPlugin([{
             from: './src/assets/fonts',
             to: 'assets/fonts'
         }]),

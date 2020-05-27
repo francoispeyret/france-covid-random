@@ -66,11 +66,15 @@ function toggleApp() {
 }
 
 
-function randomize() {
+function randomize(i) {
     areasEls.forEach((item, key) => {
         areaRemoveColorClass(item);
-        if(mode === 'normal') {
-            const random = Math.floor((Math.random() * 10) + 1) + offsetRandomValue;
+        console.log(offsetRandomValue);
+        if(i === 29 && offsetRandomValue > 18) {
+            item.classList.add('black');
+            document.querySelector('#motus').play();
+        } else if(mode === 'normal') {
+            const random = Math.floor((Math.random() * 10) + 1);
             if(random < 3) {
                 item.classList.add('red');
             } else if (random > 2 && random < 6) {
@@ -79,7 +83,7 @@ function randomize() {
                 item.classList.add('green');
             }
         } else if (mode === 'daltonien') {
-            const random = Math.floor((Math.random() * 10) + 1) + offsetRandomValue;
+            const random = Math.floor((Math.random() * 10) + 1);
             if(random < 3) {
                 item.classList.add('dalto3');
             } else if (random > 2 && random < 6) {
@@ -95,6 +99,7 @@ function randomize() {
 }
 
 function areaRemoveColorClass(item) {
+    item.classList.remove('black');
     item.classList.remove('red');
     item.classList.remove('orange');
     item.classList.remove('green');
@@ -120,15 +125,12 @@ document.querySelector('#randomize').addEventListener('click', function() {
 function randomizeRool() {
     animationIsActive = true;
     animationIteration++;
-    if(animationIteration === 29) {
-        map.classList.add('finish-animation');
-        if (mode === 'licorne') {
-            document.querySelector('#motus').play();
-        }
-    }
     if(animationIteration < 30 && animationIteration !== 0) {
-        randomize();
+        randomize(animationIteration);
         setTimeout(randomizeRool, animationIteration*10);
+        if(animationIteration === 29) {
+            map.classList.add('finish-animation');
+        }
     } else {
         animationIteration = 0;
         document.querySelector('#randomize').classList.remove('animate');
