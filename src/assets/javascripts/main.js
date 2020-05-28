@@ -46,8 +46,8 @@ function toggleApp() {
 
         areas.forEach((item) => {
             const coord = item.getBBox();
-            item.setAttribute('x', coord.x);
-            item.setAttribute('y', coord.y);
+            item.setAttribute('x', coord.x + coord.width / 2);
+            item.setAttribute('y', coord.y + coord.height / 2);
             areasEls.push(item);
         });
 
